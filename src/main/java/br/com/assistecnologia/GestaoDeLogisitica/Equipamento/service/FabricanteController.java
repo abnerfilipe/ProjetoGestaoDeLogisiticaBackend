@@ -20,7 +20,7 @@ public class FabricanteController {
 
 
 
-    @GetMapping(path = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Fabricante> listar(){
 
         return fabricanteRepository.findAll();
@@ -33,7 +33,7 @@ public class FabricanteController {
         return fabricanteRepository.findById(id);
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "")
     public Fabricante criar(@RequestBody Fabricante fabricante){
 
         return fabricanteRepository.save(fabricante);

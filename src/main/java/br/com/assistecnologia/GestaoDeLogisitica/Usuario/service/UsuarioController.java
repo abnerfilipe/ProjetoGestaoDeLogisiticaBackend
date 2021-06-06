@@ -15,7 +15,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioBusiness usuarioBusiness;
 
-    @GetMapping(path = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Usuario> listar(){
 
         return usuarioBusiness.listarUsuario();
@@ -26,7 +26,7 @@ public class UsuarioController {
         return usuarioBusiness.findOne(id);
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "")
     public Usuario criar(@RequestBody Usuario Usuario ){
 
         return usuarioBusiness.cadastrarUsuario(Usuario);
@@ -56,14 +56,14 @@ public class UsuarioController {
 //        return usuarioBusiness.listarUsuario();
 //    }
 //
-//    @PostMapping(path = "/")
+//    @PostMapping(path = "")
 //    public ResponseEntity<Object> cadastrarUsurio(@RequestBody Usuario usuario ){
 //
 //       if(!usuarioBusiness.cadastrarUsuario(usuario)) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 //        return null;
 //    }
 //
-//    @PutMapping(path = "/")
+//    @PutMapping(path = "")
 //    public void editarUsuario( @RequestBody Usuario usuario ){
 //
 //        usuarioBusiness.editarUsuario(usuario);

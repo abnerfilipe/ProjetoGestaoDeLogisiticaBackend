@@ -18,7 +18,7 @@ public class MedicaoController {
 
 
 
-    @GetMapping(path = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Medicao> listar(){
 
         return medicaoRepository.findAll();
@@ -29,7 +29,7 @@ public class MedicaoController {
                .orElseThrow(()->  new ResourceNotFoundException("Medicao " + id + " not found"));
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "")
     public Medicao criar(@RequestBody Medicao medicao){
         return medicaoRepository.save(medicao);
     }

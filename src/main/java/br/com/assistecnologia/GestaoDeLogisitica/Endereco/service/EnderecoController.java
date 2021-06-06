@@ -17,7 +17,7 @@ public class EnderecoController {
     private EnderecoRepository enderecoRepository;
 
 
-    @GetMapping(path = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Endereco> listar(){
 
         return enderecoRepository.findAll();
@@ -29,7 +29,7 @@ public class EnderecoController {
                 .orElseThrow(() -> new ResourceNotFoundException("Endereco " + id + " not found"));
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "")
     public Endereco criar(@RequestBody Endereco endereco){
 
         return enderecoRepository.save(endereco);

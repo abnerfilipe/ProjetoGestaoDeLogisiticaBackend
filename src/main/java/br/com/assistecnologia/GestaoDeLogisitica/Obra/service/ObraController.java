@@ -16,7 +16,7 @@ public class ObraController {
     private ObraRepository obraRepository;
 
 
-    @GetMapping(path = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "",produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Obra> listarObras(){
 
         return obraRepository.findAll();
@@ -28,7 +28,7 @@ public class ObraController {
                 .orElseThrow(() -> new ResourceNotFoundException("Obra " + idObra + " not found"));
     }
 
-    @PostMapping(path = "/")
+    @PostMapping(path = "")
     public Obra cadastrarObra(@RequestBody Obra obra ){
 
        return obraRepository.save(obra);
